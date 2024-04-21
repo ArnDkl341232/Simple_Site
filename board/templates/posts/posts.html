@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>{% block title %}Posts{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+    <article>
+        <p>{{ post['message'] }</p>
+        <aside>
+            Posted by{{ post['author'] }} on {{ post['created'].strftime("%d %b ,%Y at %I:%M") }}
+        </aside>
+    </article>
+{% endblock content %}

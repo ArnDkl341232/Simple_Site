@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+    <h2>{% block title %}Add posts{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+    <form action="post">
+        <div class="form-group">
+            <label for="author">Your Name</label>
+            <input type="text" name="author" id="author" value="{{ request.from['author'}}" class="form-control"></input>
+        </div>
+        <div class="form-group">
+            <label></label>
+            <textarea name="message" id="message" class="form-control" >{{ request.from['author'}}</textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Post message" class="submit-btn">
+        </div>
+    </form>
+{% endblock content %}
