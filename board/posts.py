@@ -6,7 +6,7 @@ bp = Blueprint("posts", __name__)
 def create():
     return render_template("posts/create.html")
 
-@bp.route("/create",methods = ("GET" , "POST"))
+@bp.route("/posts")
 def posts():
     posts = []
     return render_template("posts/posts.html", posts = posts)

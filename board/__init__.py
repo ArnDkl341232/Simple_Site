@@ -12,11 +12,25 @@
 
 
 from flask import Flask
-from board import pages
-from board import posts
+from board import pages , posts , database
+from dotenv import load_dotenv
+
+load_dotenv()
+
 def create_app():
     app = Flask(__name__)
+
+    database.init_app(app)
+    app.config.from_prefixed_env()
+
     app.register_blueprint(pages.bp)
     app.register_blueprint(posts.bp)
+
+    print(f"Current ENVIROMENT: {os.getenv('ENVIRONMENT')}")
+    print(f"Using Database: {os.config.get('ENVIRONMENT')}")
+
+
+
+
     return app
 
