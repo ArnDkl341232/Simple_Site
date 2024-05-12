@@ -14,6 +14,7 @@
 from flask import Flask
 from board import pages , posts , database
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
@@ -27,10 +28,7 @@ def create_app():
     app.register_blueprint(posts.bp)
 
     print(f"Current ENVIROMENT: {os.getenv('ENVIRONMENT')}")
-    print(f"Using Database: {os.config.get('ENVIRONMENT')}")
-
-
-
+    print(f"Using Database: {app.config.get('ENVIRONMENT')}")
 
     return app
 
