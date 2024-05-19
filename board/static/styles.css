@@ -85,3 +85,24 @@ form {
   margin: 0;
   padding: 0;
 }
+
+.error{
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px
+}
+.notification{
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px
+}

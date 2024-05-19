@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Messages box- {% block title %}{% endblock title %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename= 'images/Hamzasaleem-Style-4-Megapack-Folder-Server.32.ico') }}" type="image/x-icon">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -16,5 +17,17 @@
             {% block content %}<p>No messages</p>{% endblock content %}
         </main>
     </section>
+    {% if error %}
+    <div class="error">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    {% if notification %}
+    <div class="notification">
+        {{ notification }}
+    </div>
+    {% endif %}
+
 </body>
 </html>
