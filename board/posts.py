@@ -1,4 +1,4 @@
-from flask import (Blueprint, render_template, request, redirect, url_for)
+from flask import (Blueprint, render_template, request, redirect, url_for, current_app)
 from board.database import get_db
 
 bp = Blueprint("posts", __name__)
@@ -16,6 +16,7 @@ def create():
                        )
             db.commit()
 
+            current_app.logger.info(f"New post by {author}")
             return redirect(url_for("posts.posts",notification = "Post created"))
 
 
