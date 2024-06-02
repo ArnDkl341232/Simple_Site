@@ -9,7 +9,7 @@
         <article>
             <p class ="message">{{ post["message"] }}</p>
             <aside>
-                Posted by{{ post['author'] }} on {{ post['created'].strftime("%d %b ,%Y at %I:%M") }}
+                Posted by {{ post['author'] }} on {{ post['created'].strftime("%d %b ,%Y at %I:%M") }}
             </aside>
         </article>
     {% endfor %}
